@@ -1,0 +1,351 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+:root {
+	--black: #000000;
+	--gray: #262529;
+	--main-blue: #6B46D4;
+	--hover-blue: #80F;
+	--white: #FFFFFF;
+}
+
+/* fonts  */
+
+@font-face {
+	font-family: "TT Travels";
+	src: local("TTTravels-Regular"),
+		url(../fonts/TTTravels-Regular.woff2) format("woff2"),
+		url(../fonts/TTTravels-Regular.woff) format("woff");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "TT Travels";
+	src: local("TTTravels-Medium"),
+		url(../fonts/TTTravels-Medium.woff2) format("woff2"),
+		url(../fonts/TTTravels-Medium.woff) format("woff");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* basic  */
+
+body {
+	min-width: 320px;
+	font-family: "TT Travels";
+	background-color: var(--white);
+	color: var(--black);
+}
+
+.flex {
+	display: flex;
+}
+
+.list-reset {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.container {
+	position: relative;
+	max-width: 1684px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.title {
+	margin: 0;
+	padding: 0;
+	font-weight: 500;
+	font-size: 24px;
+}
+
+.title-sm {
+	margin: 0;
+	padding: 0;
+	font-weight: 500;
+	font-size: 18px;
+}
+
+.descr {
+	margin: 0;
+	padding: 0;
+	font-weight: 400;
+	font-size: 16px;
+}
+
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 165px;
+	padding: 9px 20px;
+	border: none;
+	cursor: pointer;
+	text-align: center;
+	background-color: var(--main-blue);
+	font-weight: 500;
+	font-size: 18px;
+	color: var(--white);
+	transition: 0.2s background-color ease-in-out;
+}
+
+.btn:hover,
+.btn:active {
+	background-color: var(--hover-blue);
+}
+
+.btn-empty {
+	position: relative;
+	padding: 0;
+	width: unset;
+
+	background-color: transparent;
+	color: var(--main-blue);
+}
+
+.btn-empty::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	background-color: var(--main-blue);
+	bottom: 12px;
+}
+
+.btn-empty:hover,
+.btn-empty:active {
+	background-color: transparent;
+}
+
+.hidden {
+	display: none;
+}
+
+/* events  */
+
+.events {
+	padding: 133px 0 233px;
+}
+
+.events__wrapper {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 85px);
+	justify-content: center;
+	grid-column-gap: 57px;
+	grid-row-gap: 50px;
+	padding: 0;
+}
+
+.card {
+	grid-column: span 3;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 440px;
+	width: 378px;
+	padding: 25px 30px 39px;
+	border-radius: 10px;
+	box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.12);
+}
+
+.card__wrapper {
+	gap: 8px;
+	align-items: center;
+	margin-bottom: 12px;
+}
+
+.card__wrapper-last {
+	margin-bottom: 37px;
+}
+
+.card__date {
+	margin-bottom: 17px;
+}
+
+.card__logo {
+	margin-bottom: 18px;
+	height: 90px;
+}
+
+.card__name {
+	margin-bottom: 15px;
+}
+
+.card__brief {
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+
+.card__link {
+	text-decoration: underline;
+}
+
+.card-btn__wrapper {
+	gap: 31px;
+}
+
+/* footer  */
+
+.footer {
+	padding: 58px 0 30px;
+	background-image: url(/images/footer-bg.png);
+	background-repeat: no-repeat;
+	background-position: right 0 top 0;
+	background-color: var(--gray);
+	color: var(--white);
+}
+
+.footer__text {
+	flex-direction: column;
+	gap: 20px;
+	margin-bottom: 95px;
+	max-width: 589px;
+}
+
+.footer__descr {
+	font-size: 18px;
+}
+
+.menu {
+	align-items: baseline;
+	justify-content: space-between;
+}
+
+.menu__title {
+	font-size: 36px;
+}
+
+.menu__list {
+	position: relative;
+	gap: 53px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.menu__list::before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	background-color: var(--white);
+	bottom: 30px;
+}
+
+.menu__item {
+	display: block;
+}
+
+.menu__link {
+	display: block;
+	cursor: pointer;
+}
+
+.menu__link:hover,
+.menu__link:focus {
+	outline: none;
+}
+
+.menu__nav .menu__item {
+	margin: 0;
+}
+
+.menu__nav .menu__link {
+	text-align: center;
+	color: var(--white);
+}
+
+.menu__nav .menu__line {
+	position: absolute;
+	bottom: 144%;
+	left: 0;
+	height: 9px;
+	border-radius: 10px;
+	pointer-events: none;
+	border: 1px solid #fff;
+	border-width: 0 15px;
+	background: var(--white);
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+	-webkit-transition-timing-function: cubic-bezier(1, 0.01, 0, 1);
+	-webkit-transition-timing-function: cubic-bezier(1, 0.01, 0, 1.22);
+	transition-timing-function: cubic-bezier(1, 0.01, 0, 1.22);
+}
+
+.menu__nav .menu__item:nth-child(1).menu__item--current~.menu__line {
+	-webkit-transform: translate3d(40%, 0, 0);
+	transform: translate3d(40%, 0, 0);
+}
+
+.menu__nav .menu__item:nth-child(2).menu__item--current~.menu__line {
+	-webkit-transform: translate3d(440%, 0, 0);
+	transform: translate3d(440%, 0, 0);
+}
+
+.menu__nav .menu__item:nth-child(3).menu__item--current~.menu__line {
+	-webkit-transform: translate3d(795%, 0, 0);
+	transform: translate3d(795%, 0, 0);
+}
+
+.menu__nav .menu__item:nth-child(4).menu__item--current~.menu__line {
+	-webkit-transform: translate3d(1140%, 0, 0);
+	transform: translate3d(1140%, 0, 0);
+}
+
+.menu__nav .menu__item:nth-child(5).menu__item--current~.menu__line {
+	-webkit-transform: translate3d(1466%, 0, 0);
+	transform: translate3d(1466%, 0, 0);
+}
+
+.menu__nav .menu__item:nth-child(6).menu__item--current~.menu__line {
+	-webkit-transform: translate3d(1765%, 0, 0);
+	transform: translate3d(1765%, 0, 0);
+}
+
+.menu__nav .menu__item:nth-child(7).menu__item--current~.menu__line {
+	-webkit-transform: translate3d(2078%, 0, 0);
+	transform: translate3d(2078%, 0, 0);
+}
+
+.menu__nav .menu__item:nth-child(8).menu__item--current~.menu__line {
+	-webkit-transform: translate3d(2410%, 0, 0);
+	transform: translate3d(2410%, 0, 0);
+}
+
+.menu__nav .menu__item:nth-child(9).menu__item--current~.menu__line {
+	-webkit-transform: translate3d(2810%, 0, 0);
+	transform: translate3d(2810%, 0, 0);
+}
+
+.menu__nav .menu__item:nth-child(10).menu__item--current~.menu__line {
+	-webkit-transform: translate3d(3235%, 0, 0);
+	transform: translate3d(3225%, 0, 0);
+}
+
+.menu__nav .menu__item:nth-child(11).menu__item--current~.menu__line {
+	-webkit-transform: translate3d(3605%, 0, 0);
+	transform: translate3d(3605%, 0, 0);
+}
+
+.menu__nav .menu__item:nth-child(12).menu__item--current~.menu__line {
+	-webkit-transform: translate3d(3990%, 0, 0);
+	transform: translate3d(3990%, 0, 0);
+}
